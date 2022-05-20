@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root{
+    --line--border-fill: linear-gradient(to right, rgb(1 134 218), rgb(182 49 167));
+    --line--border-empty: #525252;
+    --text-color: rgba(255,255,255,1);
+    --primary-color: 111, 76, 255;
+
+}
+*{
+    box-sizing: border-box;
+   }
+   
+   body {
+       font-family: 'Muli', sans-serif;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       height:100vh;
+       overflow: hidden;
+       margin: 0;
+       background-color: #2a2a40;
+   }
+
+   .container{
+    text-align: center;
+}
+
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress-container::before{
+    content:'';
+    background-color: var(--line--border-empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+}
+
+
+.progress{
+    background-image: var(--line--border-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.box{
+    background-color: #525252;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line--border-empty);
+    transition: 0.4s ease;
+    font-weight: 600;
+}
+
+.box.active{
+    border-color: rgb(182 49 167);
+    background-color: rgb(13, 14, 33);
+
+}
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 10px 10px -4px rgb(182 49 167);
+  transform: translateY(-2.5px);
+  transition: 0.4s ease;
+}
+
+.btn{
+    background-image: linear-gradient(to right, rgb(1 134 218), rgb(182 49 167));
+    color: var(--text-color);
+    border: 0px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 12px 32px;
+    margin: 1rem;
+    font-size: 18px;
+    border-radius: 14px;
+    outline: none;
+    transition: 1s ease-in-out;
+    
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+
+.btn:focus{
+    outline: 0;
+
+}
+
+.btn:disabled{
+    color: var(--text-color);
+    border: 2px double transparent;
+    background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    cursor: not-allowed;
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
