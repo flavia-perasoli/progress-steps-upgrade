@@ -79,7 +79,7 @@
     background-color: rgb(13, 14, 33);
 
 }
-.raise:hover,
+
 .raise:focus {
   box-shadow: 0 10px 10px -4px rgb(182 49 167);
   transform: translateY(-2.5px);
